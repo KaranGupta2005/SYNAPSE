@@ -8,6 +8,7 @@ import webpush from "web-push";
 import connectToDB from "./config/db.js";
 
 //routes
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.get("/test",(req,res)=>{
 await connectToDB();
 
 //routes
+app.use("/api/auth", authRoutes);
 
 //global error handler
 app.use((err,req,res,next)=>{
