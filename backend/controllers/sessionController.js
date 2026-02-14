@@ -1,6 +1,8 @@
 import Session from "../models/Session.js";
 import Event from "../models/Event.js";
 import ExpressError from "../middlewares/expressError.js";
+import { dispatchEvent } from "../events/dispatcher.js";
+import { EventType } from "../events/types.js";
 
 export const startSession = async (req, res) => {
   const userId = req.user._id;
@@ -29,6 +31,12 @@ export const startSession = async (req, res) => {
     userId,
     eventType: "session_start",
     data: { contextSnapshot }
+  });
+
+  // Dispatch event
+  dispatchEvent(EventType.SESSION_STARTED, {
+    sessionId: newSession._id,
+    userId
   });
 
   res.status(201).json({
@@ -67,6 +75,12 @@ export const endSession = async (req, res) => {
     userId,
     eventType: "session_end",
     data: {}
+  });
+
+  // Dispatch event
+  dispatchEvent(EventType.SESSION_ENDED, {
+    sessionId: session._id,
+    userId
   });
 
   res.status(200).json({
