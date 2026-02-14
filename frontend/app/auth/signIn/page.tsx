@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function LoginPage() {
+export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -13,7 +13,7 @@ export default function LoginPage() {
       {/* Main Container */}
       <div className="flex w-full max-w-[1200px] flex-col overflow-hidden rounded-[30px] bg-white shadow-xl lg:h-[800px] lg:flex-row">
         
-        {/* Left Side: Login Form */}
+        {/* Left Side: Sign In Form */}
         <div className="flex w-full flex-col justify-between p-8 lg:w-1/2 lg:p-[60px]">
           
           {/* Header */}
@@ -39,9 +39,9 @@ export default function LoginPage() {
 
           <main>
             <div className="mb-8">
-              <h1 className="mb-2 text-4xl font-bold text-[#2B3674]">Welcome Back</h1>
+              <h1 className="mb-2 text-4xl font-bold text-[#2B3674]">Create Account</h1>
               <p className="text-base text-[#A3AED0]">
-                Enter your email and password to log in!
+                Enter your email and password to sign up!
               </p>
             </div>
 
@@ -54,7 +54,7 @@ export default function LoginPage() {
                 <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
                 <path fill="none" d="M0 0h48v48H0z"/>
               </svg>
-              Log in with Google
+              Sign up with Google
             </button>
 
             <div className="mb-6 flex items-center text-sm text-[#A3AED0]">
@@ -119,14 +119,14 @@ export default function LoginPage() {
               </div>
 
               <button type="submit" className="w-full rounded-2xl bg-[#4318FF] py-4 text-base font-bold text-white transition hover:bg-[#3311cc]">
-                Log In
+                Sign Up
               </button>
             </form>
           </main>
 
           <footer>
             <p className="mt-8 text-sm text-[#A3AED0]">
-              Not registered yet? <a href="/auth/signIn" className="font-medium text-[#4318FF] hover:text-[#3311cc]">Create an Account</a>
+              Already have an account? <a href="/auth/login" className="font-medium text-[#4318FF] hover:text-[#3311cc]">Login</a>
             </p>
           </footer>
         </div>
