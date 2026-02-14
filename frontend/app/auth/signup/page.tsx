@@ -161,14 +161,13 @@ const Signup = () => {
           </footer>
         </div>
 
-        {/* Right Side: Image Placeholder */}
-        <div className="relative hidden w-1/2 bg-gradient-to-br from-[#868CFF] to-[#4318FF] lg:block">
-          <div className="absolute inset-0 flex items-center justify-center p-12">
-            <div className="text-center text-white">
-              <h2 className="text-4xl font-bold mb-4">Join SYNAPSE</h2>
-              <p className="text-lg opacity-90">Start your adaptive audio journey today</p>
-            </div>
-          </div>
+        {/* Right Side: Image */}
+        <div className="relative hidden w-1/2 bg-[#F4F7FE] lg:block">
+          <img 
+            src="/image.png" 
+            alt="SYNAPSE Signup" 
+            className="absolute inset-0 h-full w-full object-cover object-center" 
+          />
         </div>
       </div>
     </div>
