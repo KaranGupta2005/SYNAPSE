@@ -6,9 +6,9 @@ import http from "http";
 import webpush from "web-push";
 
 import connectToDB from "./config/db.js";
-
-//routes
 import authRoutes from "./routes/authRoutes.js";
+import sessionRoutes from "./routes/sessionRoutes.js";
+import feedbackRoutes from "./routes/feedbackRoutes.js";
 
 dotenv.config();
 
@@ -32,6 +32,8 @@ await connectToDB();
 
 //routes
 app.use("/api/auth", authRoutes);
+app.use("/api/session", sessionRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 //global error handler
 app.use((err,req,res,next)=>{
